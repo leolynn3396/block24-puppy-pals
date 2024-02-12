@@ -12,7 +12,7 @@ function App() {
   const featuredPup = puppies.find((pup) => pup.id === featPupId)
   console.log(featuredPup);
 
-  function handleClick(puppy) {
+  function handleClick(puppy) {  // updating whatever pupId was clicked by calling setFeatPupid on line 17. This function is used on line23 with onClick
     console.log("puppy id: ", puppy.id);
     setFeatPupId(puppy.id);
   }
@@ -20,7 +20,7 @@ function App() {
     <div className='App'>
       {
         puppies.map((puppy) => {
-          return <p onClick={() => handleClick(puppy)} key={puppy.id}>{puppy.name}</p>
+          return <p onClick={() => handleClick(puppy)} key={puppy.id}>{puppy.name}</p>  //see handleCliek fucntion on line 15
         })
       }
       {featPupId && <div>
